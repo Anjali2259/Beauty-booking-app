@@ -1,0 +1,53 @@
+{
+  "expo": {
+    "name": "Beauty Try-Ons",
+    "slug": "beauty-tryons-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFB6C1"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera for virtual beauty try-ons and face detection.",
+        "NSPhotoLibraryUsageDescription": "This app accesses your photo library to save and share your virtual try-on looks."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFB6C1"
+      },
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Beauty Try-Ons to access your camera for virtual makeup and hair try-ons."
+        }
+      ],
+      [
+        "expo-face-detector",
+        {
+          "faceDetectionPermission": "Allow Beauty Try-Ons to detect faces for accurate makeup application."
+        }
+      ]
+    ]
+  }
+}
