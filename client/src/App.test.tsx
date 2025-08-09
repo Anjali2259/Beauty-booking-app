@@ -1,9 +1,10 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+// Basic smoke test for app rendering
+it('renders the app brand in the header', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const header = screen.getByRole('banner');
+  expect(within(header).getByText(/BeautyBook/i)).toBeInTheDocument();
 });

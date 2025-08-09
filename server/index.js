@@ -32,7 +32,8 @@ mongoose.connect(MONGODB_URI, {
 .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
-app.use('/api/auth', require('./routes/auth'));
+const authModule = require('./routes/auth');
+app.use('/api/auth', authModule.router);
 app.use('/api/users', require('./routes/users'));
 app.use('/api/services', require('./routes/services'));
 app.use('/api/bookings', require('./routes/bookings'));
